@@ -9,8 +9,10 @@ import FunctionLayer.House;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginException;
 import FunctionLayer.OrderException;
+import FunctionLayer.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -26,14 +28,13 @@ public class Order extends Command {
         int height = Integer.parseInt(request.getParameter("height"));
         int width = Integer.parseInt(request.getParameter("width"));
         int length = Integer.parseInt(request.getParameter("length"));
+       
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
         
-        House house = new House(height, width, length);
-        
-        LogicFacade.createOrder(house);
-        //put house in database
-        //return generated house (id)?
-        
-        
+        House house = LogicFacade.createHouse(height, width, length);
+        LogicFacade.createOrder(house, user);
+        //do something with generated house?
         return "orderconfirmation"; // + id from order
     }
     

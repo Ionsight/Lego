@@ -48,6 +48,7 @@
         </table>
         
         To get help: <a href="FrontController?command=help">Press</a>
+        To get help: <a href="FrontController?command=order">Press</a>
         
         <% String error = (String) request.getAttribute( "error");
            if ( error != null) { %>

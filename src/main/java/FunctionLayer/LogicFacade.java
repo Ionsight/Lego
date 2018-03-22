@@ -20,7 +20,11 @@ public class LogicFacade {
         return user;
     }
 
-    public static void createOrder(House house) throws OrderException {
-        OrderMapper.createOrder(house);
+    public static void createOrder(House house, User user) throws OrderException {
+        OrderMapper.createOrder(house, user);
+    }
+    
+    public static House createHouse(int height, int width, int length){
+        return new House(height, width, length);
     }
 }
