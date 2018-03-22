@@ -10,11 +10,11 @@ import DBAccess.UserMapper;
  */
 public class LogicFacade {
 
-    public static User login(String email, String password) throws LoginSampleException {
+    public static User login(String email, String password) throws LoginException {
         return UserMapper.login(email, password);
     }
 
-    public static User createUser(String email, String password) throws LoginSampleException {
+    public static User createUser(String email, String password) throws LoginException {
         User user = new User(email, password, "customer");
         UserMapper.createUser(user);
         return user;
