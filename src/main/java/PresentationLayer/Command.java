@@ -11,21 +11,21 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put( "login", new Login() );
-        commands.put( "register", new Register() );
-        commands.put( "help" , new Help());
-        commands.put( "order", new Order() );
+        commands.put("login", new Login());
+        commands.put("register", new Register());
+        commands.put("help", new Help());
+        commands.put("order", new Order());
     }
 
-    static Command from( HttpServletRequest request ) {
-        String commandName = request.getParameter( "command" );
-        if ( commands == null ) {
+    static Command from(HttpServletRequest request) {
+        String commandName = request.getParameter("command");
+        if (commands == null) {
             initCommands();
         }
-        return commands.getOrDefault(commandName, new UnknownCommand() );
+        return commands.getOrDefault(commandName, new UnknownCommand());
     }
 
-    abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    abstract String execute(HttpServletRequest request, HttpServletResponse response)
             throws LoginSampleException;
 
 }

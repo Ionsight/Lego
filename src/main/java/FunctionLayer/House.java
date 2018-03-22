@@ -10,6 +10,7 @@ package FunctionLayer;
  * @author Dradrach
  */
 public class House {
+
     private int height;
     private int width;
     private int length;
@@ -36,6 +37,4 @@ public class House {
     public String toString() {
         return "House{" + "height=" + height + ", width=" + width + ", length=" + length + '}';
     }
-    
-    
 }

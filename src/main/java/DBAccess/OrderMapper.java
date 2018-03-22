@@ -12,8 +12,8 @@ import FunctionLayer.House;
  * @author Dradrach
  */
 public class OrderMapper {
-    
-    public static void createOrder(House house){
-        
+
+    public static void createOrder(House house) {
+
     }
 }

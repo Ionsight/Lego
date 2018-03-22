@@ -19,5 +19,5 @@ public class Help extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         return "help";
     }
-    
+
 }
