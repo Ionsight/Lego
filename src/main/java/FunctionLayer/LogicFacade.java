@@ -20,7 +20,7 @@ public class LogicFacade {
         return user;
     }
 
-    public static void createOrder(House house) {
+    public static void createOrder(House house) throws OrderException {
         OrderMapper.createOrder(house);
     }
 }

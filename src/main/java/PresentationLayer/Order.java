@@ -8,6 +8,7 @@ package PresentationLayer;
 import FunctionLayer.House;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginException;
+import FunctionLayer.OrderException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,7 +22,7 @@ public class Order extends Command {
     }
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException, OrderException {
         int height = Integer.parseInt(request.getParameter("height"));
         int width = Integer.parseInt(request.getParameter("width"));
         int length = Integer.parseInt(request.getParameter("length"));
