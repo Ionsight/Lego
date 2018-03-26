@@ -12,10 +12,11 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put("login", new Login());
-        commands.put("register", new Register());
-        commands.put("help", new Help());
-        commands.put("order", new Order());
+        commands.put("login", new LoginCommand());
+        commands.put("register", new RegisterCommand());
+        commands.put("help", new HelpCommand());
+        commands.put("order", new OrderCommand());
+        commands.put("showorders", new )
     }
 
     static Command from(HttpServletRequest request) {
@@ -23,7 +24,7 @@ abstract class Command {
         if (commands == null) {
             initCommands();
         }
-        return commands.getOrDefault(commandName, new UnknownCommand());
+        return commands.getOrDefault(commandName, new UnknownCommandCommand());
     }
 
     abstract String execute(HttpServletRequest request, HttpServletResponse response)

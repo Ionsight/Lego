@@ -18,9 +18,9 @@ import javax.servlet.http.HttpSession;
  *
  * @author Dradrach
  */
-public class Order extends Command {
+public class OrderCommand extends Command {
 
-    public Order() {
+    public OrderCommand() {
     }
 
     @Override
