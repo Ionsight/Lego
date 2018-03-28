@@ -20,9 +20,6 @@ import javax.servlet.http.HttpSession;
  */
 public class OrderCommand extends Command {
 
-    public OrderCommand() {
-    }
-
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException, OrderException {
         int height = Integer.parseInt(request.getParameter("height"));
