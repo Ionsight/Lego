@@ -13,5 +13,9 @@
     </head>
     <body>
         <h1>Order Confirmation</h1>
+        <form name = showorders action="FrontController" method = "POST">
+            <input type="hidden" name="command" value="showorders">
+            <input type="submit" value="Show orders">
+        </form>
     </body>
 </html>

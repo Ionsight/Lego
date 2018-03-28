@@ -5,7 +5,7 @@
  */
 package PresentationLayer;
 
-import FunctionLayer.House;
+import FunctionLayer.OrderBuilder;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginException;
 import FunctionLayer.OrderException;
@@ -29,7 +29,7 @@ public class OrderCommand extends Command {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         
-        House house = LogicFacade.createHouse(height, width, length);
+        OrderBuilder house = LogicFacade.createOrderBuilder(height, width, length);
         LogicFacade.createOrder(house, user);
         //do something with generated house?
         return "orderconfirmation"; // + id from order

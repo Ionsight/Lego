@@ -9,16 +9,28 @@ package FunctionLayer;
  *
  * @author Dradrach
  */
-public class House {
+public class Order {
 
+    private int id;
+    private int userid;
     private int height;
     private int width;
     private int length;
 
-    public House(int height, int width, int length) {
+    public Order(int id, int userid, int height, int width, int length) {
+        this.id = id;
+        this.userid = userid;
         this.height = height;
         this.width = width;
         this.length = length;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getUserid() {
+        return userid;
     }
 
     public int getHeight() {
@@ -35,6 +47,7 @@ public class House {
 
     @Override
     public String toString() {
-        return "House{" + "height=" + height + ", width=" + width + ", length=" + length + '}';
+        return "Order{" + "id=" + id + ", userid=" + userid + ", height=" + height + ", width=" + width + ", length=" + length + '}';
     }
+
 }

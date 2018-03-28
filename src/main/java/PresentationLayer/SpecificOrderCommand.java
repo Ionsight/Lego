@@ -5,12 +5,8 @@
  */
 package PresentationLayer;
 
-import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginException;
-import FunctionLayer.Order;
 import FunctionLayer.OrderException;
-import FunctionLayer.User;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,14 +14,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Dradrach
  */
-public class AllOrdersCommand extends Command {
+public class SpecificOrderCommand extends Command {
+
+    public SpecificOrderCommand() {
+    }
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException, OrderException {
-        User user = (User) request.getSession().getAttribute("user");
-        List<Order> orders = LogicFacade.getOrders(user);
-        request.setAttribute("orders", orders);
-        return user.getRole() + "allorders";
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

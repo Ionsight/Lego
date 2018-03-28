@@ -4,6 +4,9 @@
     Author     : Dradrach
 --%>
 
+<%@page import="FunctionLayer.Order"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +15,19 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>See your orders!</h1>
+        <% List<Order> orders = (ArrayList) request.getAttribute("orders");
+            if (orders != null) {
+                for (Order order : orders) {
+                    String orderLine = "Orderid: " + order.getId() + ", height " + order.getHeight()
+                            + ", width: " + order.getWidth() + ", length: " + order.getLength();
+        %> 
+        <form name = specificorder action="FrontController" method = "POST">
+            <input type="hidden" name="command" value="specificorder">
+            <input type="submit" value="<% out.print(orderLine); %>">
+        </form>
+        <br> <%
+                }
+            }%>
     </body>
 </html>

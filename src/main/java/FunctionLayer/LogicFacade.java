@@ -21,16 +21,16 @@ public class LogicFacade {
         return user;
     }
 
-    public static void createOrder(House house, User user) throws OrderException {
+    public static void createOrder(OrderBuilder house, User user) throws OrderException {
         OrderMapper.createOrder(house, user);
     }
     
-    public static void createOrder(House house, int userid) throws OrderException {
+    public static void createOrder(OrderBuilder house, int userid) throws OrderException {
         OrderMapper.createOrder(house, userid);
     }
     
-    public static House createHouse(int height, int width, int length){
-        return new House(height, width, length);
+    public static OrderBuilder createOrderBuilder(int height, int width, int length){
+        return new OrderBuilder(height, width, length);
     }
 
     public static List getOrders(User user) throws OrderException {
