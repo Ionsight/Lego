@@ -31,7 +31,7 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
 
-            String SQL = "INSERT INTO `useradmin`.`orders` (`users_id`, `height`, `width`, `length`) VALUES (?, ?, ?, ?)";
+            String SQL = "INSERT INTO `lego`.`orders` (`users_id`, `height`, `width`, `length`) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
             ps.setInt(1, userid);
