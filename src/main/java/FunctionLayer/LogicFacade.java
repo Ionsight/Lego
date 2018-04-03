@@ -3,6 +3,7 @@ package FunctionLayer;
 import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
 import java.util.List;
+import FunctionLayer.Order;
 
 /**
  * The purpose of LogicFacade is to...
@@ -36,4 +37,13 @@ public class LogicFacade {
     public static List getOrders(User user) throws OrderException {
         return OrderMapper.getOrders(user);
     }
+    
+    public static Order createOrderObject(int id, int userid, int height, int width, int length) {
+        return new Order(id, userid, height, width, length);
+}
+
+    public static List<Brick> calculateBricks(Order order) {
+        return BricksCalculator.calculate(order);
+    }
+
 }

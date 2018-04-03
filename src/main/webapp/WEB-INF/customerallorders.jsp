@@ -24,7 +24,7 @@
         %> 
         <form name = specificorder action="FrontController" method = "POST">
             <input type="hidden" name="command" value="specificorder">
-            <input type="hidden" name="orderid" value="<%= order.getId() %>">
+            <input type="hidden" name="orderid" value="<%= order.getId()%>">
             <input type="hidden" name="height" value="<%= order.getHeight()%>">
             <input type="hidden" name="width" value="<%= order.getWidth()%>">
             <input type="hidden" name="length" value="<%= order.getLength() %>">
